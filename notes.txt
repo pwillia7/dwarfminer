@@ -1,0 +1,82 @@
+Top down Mine 1 z level to start no down
+
+find the adamantium 
+
+avoid the aquifer
+
+
+32x32 blocks
+
+15X20 (blocks for play)
+
+480px X 800px
+480px X 640px (blocks)
+480px X 160px (stats)
+
+
+##Things you can do
+
+Start at bottom left
+Move/Mine
+Exit
+Run into Adamantium
+Run into acquifer
+Run into damp 1
+
+
+##Acquifer
+
+Circle in middle
+size randomness?
+position randomness?
+
+##Adamantium
+
+Placed randomly in top 1/4 of screen non damp non acquifer tile
+
+##Graphics Needed
+
+Dirt Tile
+Dirt Tile Damp 1
+empty tile
+damp empty tile
+Dwarf
+Adamantium
+Water/Acquifer
+
+## Status Screen
+
+Just says Welcome to Dwarf Miner now
+
+
+## Code
+
+### Screen
+
+Cut into grid
+Generate Acquifer
+	pick x pos
+	pick y pos
+	make circle 5-7 tile dia
+	mark tiles damp and water
+
+Generate all Dirt Tile at start
+
+Place Player at 0,0
+Write Welcome to Dwarf Miner on Status Screen
+
+	
+
+
+Input driven.
+
+wait for input from user. 
+move 32 px direction moved. 
+check collision tile
+	if dirt, remove tile, replace empty
+	if damp, show damp empty tile say this is damp
+	if damp2, show damp2 tile say this is wet
+	if water, die
+	if adamantium win
+loop
+
