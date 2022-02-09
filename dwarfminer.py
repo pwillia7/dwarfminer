@@ -50,6 +50,8 @@ DampF = resource_path('assets/images/damp.png')
 WaterF = resource_path('assets/images/water.png')
 AdamF = resource_path('assets/images/adam.png')
 dirtImg = pygame.image.load(DirtF)
+altDirtImg = pygame.transform.flip(dirtImg,True,True)
+altAltDirtImg = pygame.transform.flip(dirtImg, True, False)
 dampImg = pygame.image.load(DampF)
 waterImg = pygame.image.load(WaterF)
 adamImg = pygame.image.load(AdamF)
@@ -91,7 +93,14 @@ def drawMap():
         for j in range(playAreaX):
             x = j * 32 
             y = i * 32
-            screen.blit(dirtImg, (x,y))
+            rand = random.random()
+            if rand > .3 and rand < .6:
+                screen.blit(altDirtImg, (x,y))
+            if rand < .3:
+                screen.blit(altAltDirtImg, (x,y))
+            else:
+                screen.blit(dirtImg, (x,y))
+                
 
 # Detect collisions
 def collision(self):
